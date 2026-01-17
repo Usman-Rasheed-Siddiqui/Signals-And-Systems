@@ -1,0 +1,5 @@
+
+t = -0.5:0.5;
+x = cos(pi.*t);
+
+function [y, n] = Si

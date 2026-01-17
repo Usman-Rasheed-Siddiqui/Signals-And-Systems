@@ -1,0 +1,22 @@
+
+n = -10:10;
+delta = (ones(size(n))).*(n == 0);
+deltaNeg5 = (ones(size(n))).*(n == -5);
+unitStep5 = (ones(size(n))).*(n>= -5);
+unitStepNeg6 = (ones(size(n))).*(n >= 6);
+unitStepNeg4 = (ones(size(n))).*(n >= 4);
+unitStepNeg10 = (ones(size(n))).*(n >= 10);
+unitStep6 = (ones(size(n))).*(n >= -6);
+
+x1 = (n.^2).*( unitStep5 - unitStepNeg6) + (10.*delta) + 20.*((0.5).^5).*(unitStepNeg4 - unitStepNeg10);
+x2 = ((0.2).^n).*(unitStep5 + unitStep6).*deltaNeg + 20.*(((0.5).^n).*(n >= -4));
+
+subplot(2, 1, 1), stem(x1, 'filled');
+xlabel('time (sec)');
+ylabel('x1');
+
+subplot(2, 1, 2), stem(x2, 'filled');
+xlabel('time (sec)');
+ylabel('x2');
+
+
